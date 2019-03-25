@@ -40,7 +40,6 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
         //we can only check if every field which with given Id exists
         //one of them would be null if one Id wouldn't exist therefore following statement would fail
         if(this.wrapperField && this.passwordField && this.passwordSubmitButton) {
-
             var longEnough = this.checkForLength();
             var hasSpecialChars = this.checkForSpecialCharacters();
 

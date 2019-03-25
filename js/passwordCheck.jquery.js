@@ -11,7 +11,7 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     this.wrapperField = $(wrapperId);
     this.passwordField = $(passwordInputFieldId);
     this.passwordSubmitButton = $(passwordSubmitButtonId);
-
+    //$ um auf bestimmte Docs zu verweisen
 
     var that = this; //a trick because this is a keyword and means different things in a new context! Especially when you work with events or if you call functions outside your class "this" won't mean you!
 
@@ -27,7 +27,7 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
         //therefore we previously saved "this" in a variable called "that"
         that.check();
     });
-
+//blur damit es nicht mehr im fokus ist sobald man wo anders hinklickt
     this.passwordField.keydown(function() {
         that.check();
     });
@@ -39,7 +39,7 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
     this.passwordSubmitButton.click(function() {
         that.check();
     });
-
+//Focus wird für elemente welche von der maus ausgewühlt werden verwendet
 
 
     this.check = function() {
@@ -60,7 +60,7 @@ function PasswordChecker(wrapperId, passwordInputFieldId, passwordSubmitButtonId
                 this.wrapperField.removeClass(this.warningClass + ' ' + this.successClass).addClass(this.errorClass);
                 this.passwordSubmitButton.attr('disabled', true);
             }
-
+//removeClass entfernt elemente/content addClass holt und setzt CSS Klassen .attr holt attribut value
 
         } else {
             //obviously a field is null (we weren't able to find it)
